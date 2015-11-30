@@ -5,6 +5,6 @@ public class XMLLogger implements Logger {
 
     public void log( final String message ) {
         // log to xml
-        System.err.println( "logging" );
+        System.err.println( "XML_logging" );
     }
 }

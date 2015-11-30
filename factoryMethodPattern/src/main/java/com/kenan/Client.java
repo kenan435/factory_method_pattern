@@ -5,6 +5,7 @@ package com.kenan;
  *
  */
 public class Client {
+
     private void someMethodThatLogs( final AbstractLoggerCreator logCreator ) {
 
         final Logger logger = logCreator.createLogger();
@@ -17,8 +18,11 @@ public class Client {
         // directly,
         // but this would normally be passed to constructor for use.
 
-        final AbstractLoggerCreator creator = new XMLLoggerCreator();
         final Client client = new Client();
-        client.someMethodThatLogs( creator );
+
+        client.someMethodThatLogs( new XMLLoggerCreator() );
+
+        client.someMethodThatLogs( new RegularLoggerCreator() );
+
     }
 }
